@@ -28,7 +28,7 @@ The dataset from Kaggle is used for this project. The dataset contains historica
 |Temperature| Average temperature in the region|Float|
 |MarkDown| Anonymized data related to promotional markdowns that Walmart is running|Float|
 ## Business Problem or Opportunity, Domain Knowledge
-* To forecast Walmart's weekly sales based on the past two years' sales on a weekly basis.
+* To forecast Walmart's weekly sales based on the past two years' sales on a weekly basis using AWS services (Sagemaker, Quicksight, and S3).
 * To investigate how additional factors may influence weekly sales.
 * To evaluate the different machine learning models as XGBoost and KNN.
 * To optimize the manufacturing process and therefore increase income while lowering costs.
@@ -36,4 +36,4 @@ The dataset from Kaggle is used for this project. The dataset contains historica
 * To bring valuable insights into pricing decisions on sales performance.
 
 ## Research Objective and Question
-* What are the impacts of temperature, fuel prices, and various store promotions on weekly sales of different Walmart stores for two years using various AWS services such as Sagemaker, Quicksight, and S3?
+* What are the impacts of temperature, fuel prices, and various store promotions on weekly sales of different Walmart stores for two years?
