@@ -30,7 +30,7 @@ The dataset from Kaggle is used for this project. The dataset contains historica
 ## Business Problem or Opportunity, Domain Knowledge
 * The goal is to forecast Walmart's weekly sales based on past year sales on a weekly basis.
 * To investigate how additional factors may influence weekly sales.
-* To evaluate the different machine learning models as XGBoost and KNN.
+* To evaluate the different machine learning models such as XGBoost and KNN.
 * To optimize the manufacturing process and therefore to increase income while lowering costs.
 * To understand customer demographics and analyze the weekly sales and observe trends in data.
 * To bring valuable insights in pricing decisions on sales performance.
