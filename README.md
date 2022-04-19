@@ -72,7 +72,7 @@ The above dashboard indicates Negative Weekly Sales. It depicts the loss of reve
 The above dashboard indicates the missing values in our dataset. From this, we can observe that the Markdown columns have the largest amount of missing data which indicates that the products did not have any promotions or discounts.
 <img src = "img/weekly%20sales%20with%20isholiday.png" width="700" height ="350">
 The above boxplot maps the sales of Walmart based on regular days and holidays. Here we can see that the holiday sales in November exceeded the regular day sales.
-<img src = "img/pie%20chart%20store%20percentage.png" width="700" height ="250">
+<img src = "img/pie%20chart%20store%20percentage.png" width="500" height ="450">
 The above pie chart represents the percentage of sales of each store.
 <img src = "img/weekly%20sales.png" width="700" height ="250">
 The above figure represents the monthly sales of Walmart for the years 2010 to 2012. From this, we can see that the months of November and December had the highest sales as compared to the other months.
