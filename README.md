@@ -64,4 +64,12 @@ def split_date(df):
     
 split_date(master_df)
 ```
+## Exploratory data analysis
+<img src = "img/negative-weekly%20sales.png" width="700" height ="350">
+<img src = "img/missing%20values%20markdown.png" width="700" height ="350">
+<img src = "img/weekly%20sales%20with%20isholiday.png" width="700" height ="350">
+<img src = "img/weekly%20sales.png" width="700" height ="250">
+<img src = "img/yearly%20weekly%20sales.png" width="700" height ="350">
+<img src = "img/Screen%20Shot%202022-04-19%20at%201.50.52%20PM.png" width="700" height ="350">
+
 
