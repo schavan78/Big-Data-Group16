@@ -37,3 +37,31 @@ The dataset from Kaggle is used for this project. The dataset contains historica
 
 ## Research Objective and Question
 * What are the impacts of temperature, fuel prices, and various store promotions on weekly sales of different Walmart stores for two years?
+
+## Data Preparation
+The following three csv files are included in the dataset:
+
+train.csv is a spreadsheet with 421570 rows and 5 columns. The columns include data for a store, department, date, weekly sales, and whether or not a given week is a holiday week.
+
+store.csv is a 45-row, three-column spreadsheet. The columns correspond to the types of stores, as well as their sizes.
+
+This file, features.csv, has 8190 rows and 12 columns. This file contains additional information on the stores as well as the regions in which they are located. It contains statistics for the date, temperature, gasoline price, consumer price index, and unemployment rate for the region in which a specific store is located.
+
+* ###  Merging the dataset 
+We have to merge the datase into one dataframe. 
+```
+master_df = train_df.merge(stores_df, how='left').merge(features_df, how='left')
+```
+* ### Extracting Date Information
+ The sales are given for Years 2012-2012 on weekly basis. So we have to split the date column to extract information for year, month and week.
+```
+def split_date(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df['Year'] = df.Date.dt.year
+    df['Month'] = df.Date.dt.month
+    df['Day'] = df.Date.dt.day
+    df['WeekOfYear'] = (df.Date.dt.isocalendar().week)*1.0   
+    
+split_date(master_df)
+```
+
