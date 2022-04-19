@@ -27,6 +27,7 @@ The dataset from Kaggle is used for this project. The dataset contains historica
 |IsHoliday|  whether the week is a special holiday week |Boolean|
 |Temperature| Average temperature in the region|Float|
 |MarkDown| Anonymized data related to promotional markdowns that Walmart is running|Float|
+
 ## Business Problem or Opportunity, Domain Knowledge
 * To forecast Walmart's weekly sales based on the past two years' sales on a weekly basis using AWS services (Sagemaker, Quicksight, and S3).
 * To investigate how additional factors may influence weekly sales.
@@ -48,12 +49,12 @@ store.csv is a 45-row, three-column spreadsheet. The columns correspond to the t
 This file, features.csv, has 8190 rows and 12 columns. This file contains additional information on the stores as well as the regions in which they are located. It contains statistics for the date, temperature, gasoline price, consumer price index, and unemployment rate for the region in which a specific store is located.
 
 * ###  Merging the dataset 
-We have to merge the datase into one dataframe. 
+We have to merge the dataset into one dataframe. 
 ```
 master_df = train_df.merge(stores_df, how='left').merge(features_df, how='left')
 ```
 * ### Extracting Date Information
- The sales are given for Years 2012-2012 on weekly basis. So we have to split the date column to extract information for year, month and week.
+ The sales are given for the Years 2012-2012 on weekly basis. So we have to split the date column to extract information for the year, month and week.
 ```
 def split_date(df):
     df['Date'] = pd.to_datetime(df['Date'])
@@ -66,10 +67,14 @@ split_date(master_df)
 ```
 ## Exploratory data analysis
 <img src = "img/negative-weekly%20sales.png" width="700" height ="350">
+The above dashboard indicates Negative Weekly Sales. It depicts the loss of revenue whereby product returns and rebates exceed actual product sales.
 <img src = "img/missing%20values%20markdown.png" width="700" height ="350">
+The above dashboard indicates the missing values in our dataset. From this, we can observe that the Markdown columns have the largest amount of missing data which indicates that the products did not have any promotions or discounts.
 <img src = "img/weekly%20sales%20with%20isholiday.png" width="700" height ="350">
+The above boxplot maps the sales of Walmart based on regular days and holidays. Here we can see that the holiday sales in November exceeded the regular day sales.
 <img src = "img/weekly%20sales.png" width="700" height ="250">
+The above figure represents the monthly sales of Walmart for the years 2010 to 2012. From this, we can see that the months of November and December had the highest sales as compared to the other months.
 <img src = "img/yearly%20weekly%20sales.png" width="700" height ="350">
+The above boxplot represents sales of the Walmart stores for the years 2010, 2011, and 2012. Over the three years, 2010 had the highest sales. From 2011, the sales started decreasing indicating a negative trend.
 <img src = "img/Screen%20Shot%202022-04-19%20at%201.50.52%20PM.png" width="700" height ="350">
-
-
+The above barchart represents average sales of Walmart products according to the different store types. This shows that store type A has the highest average sales.
