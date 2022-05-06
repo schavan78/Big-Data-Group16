@@ -56,28 +56,15 @@ store.csv is a 45-row, three-column spreadsheet. The columns correspond to the t
 This file, features.csv, has 8190 rows and 12 columns. This file contains additional information on the stores as well as the regions in which they are located. It contains statistics for the date, temperature, gasoline price, consumer price index, and unemployment rate for the region in which a specific store is located.
 
 * ###  Merging the dataset 
-We have to merge the dataset into one dataframe. 
-```
-master_df = train_df.merge(stores_df, how='left').merge(features_df, how='left')
-```
+We have to merge the dataset into one dataframe.
+
 * ### Extracting Date Information
  The sales are given for the Years 2012-2012 on weekly basis. So we have to split the date column to extract information for the year, month and week.
-```
-def split_date(df):
-    df['Date'] = pd.to_datetime(df['Date'])
-    df['Year'] = df.Date.dt.year
-    df['Month'] = df.Date.dt.month
-    df['Day'] = df.Date.dt.day
-    df['WeekOfYear'] = (df.Date.dt.isocalendar().week)*1.0   
-    
-split_date(master_df)
-```
+
 ---
 ## Exploratory data analysis
 <img src = "img/negative-weekly%20sales.png" width="700" height ="350">
 The above dashboard indicates Negative Weekly Sales. It depicts the loss of revenue whereby product returns and rebates exceed actual product sales.
-<img src = "img/missing%20values%20markdown.png" width="700" height ="350">
-The above dashboard indicates the missing values in our dataset. From this, we can observe that the Markdown columns have the largest amount of missing data which indicates that the products did not have any promotions or discounts.
 <img src = "img/weekly%20sales%20with%20isholiday.png" width="700" height ="350">
 The above boxplot maps the sales of Walmart based on regular days and holidays. Here we can see that the holiday sales in November exceeded the regular day sales.
 <img src = "img/pie%20chart%20store%20percentage.png" width="500" height ="450">
@@ -86,7 +73,15 @@ The above pie chart represents the percentage of sales of each store.
 The above figure represents the monthly sales of Walmart for the years 2010 to 2012. From this, we can see that the months of November and December had the highest sales as compared to the other months.
 <img src = "img/yearly%20weekly%20sales.png" width="700" height ="350">
 The above boxplot represents sales of the Walmart stores for the years 2010, 2011, and 2012. Over the three years, 2010 had the highest sales. From 2011, the sales started decreasing indicating a negative trend.
+
+
+### EDA using AWS Quicksight
+
+<img src = "img/missing%20values%20markdown.png" width="700" height ="350">
+
+The above dashboard indicates the missing values in our dataset. From this, we can observe that the Markdown columns have the largest amount of missing data which indicates that the products did not have any promotions or discounts.
 <img src = "img/Screen%20Shot%202022-04-19%20at%201.50.52%20PM.png" width="700" height ="350">
+
 The above barchart represents average sales of Walmart products according to the different store types. This shows that store type A has the highest average sales.
 
 ---
@@ -105,8 +100,12 @@ To compare the performance of the Linear Regression and the XGBoost models we ha
 
 ---
 ## Results
-After employing and fitting the two models we compared their RMSE and R-Squared scores. Linear Regression had a Normalized RMSE score of 0.9453 and an R-Squared score of 0.0912. Whereas XGBoost produced a Normalized RMSE score of 0.1888 and an R-Squared score of 0.9637.
-XGBoost model had the highest accuracy when compared to Linear Regression. XGBoost was able to accurately predict Walmart's weekly sales.
+After employing and fitting the two models we compared their RMSE and R-Squared scores and observed that XGBoost was able to accurately predict Walmart's weekly sales than Linear Regression.
+
+| Model             | Normalized RMSE | R-Squared |
+| ----------------- | --------------- | --------- |
+| Linear Regression | 0.9453          | 0.0912    |
+| XGBoost           | 0.1888          | 0.9637    |
 
 Linear Regression performance:
 <img src = "img/linearregression.png" width="700" height ="350">
