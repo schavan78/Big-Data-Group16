@@ -122,6 +122,6 @@ We further plan to predict the weekly sales of Walmart based on certain other pa
 
 ### Instructions
 1. Clone the repository.
-2. From the Deliverable 3 folder, start by opening the EDA.ipynb file and execute the Jupyter notebook to observe the various graphs and correlations between features.
+2. From the Final Deliverable folder, start by opening the EDA.ipynb file and execute the Jupyter notebook to observe the various graphs and correlations between features.
 3. Open the Train-Test Data.ipynb file and execute all the cells. This file generates the data-converted folder which will contain the train and test data.
 4. Open and execute all the cells in the Train and Deploy.ipynb file to learn about the predictions.
